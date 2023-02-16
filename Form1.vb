@@ -42,7 +42,9 @@ Public Class Form1
 
             con.Open()
 
-            Dim cmd As New SqlCommand(("Instert Into StudentInfo Values"(" " & stFirstName & " " & stLastName & " " & stSubject & " " & stPeriod & " " & stBus1 & " " & stBus2)))
+            Dim insertCommand = "INSERT INTO StudentInfo ('" & stFirstName & "', '" & stLastName & "', '" & stSubject & "', '" & stPeriod & "')
+            '' Put a breakpoint here and grab the value of insertCommand.  Paste that into SQL mgmt studio to make sure it's correct to test it. 
+            Dim cmd As New SqlCommand(insertCommand)
 
             cmd.ExecuteNonQuery()
 
